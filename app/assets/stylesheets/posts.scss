@@ -1,0 +1,44 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.title {
+      font-size: 30px;
+      font-weight: bold;
+    }
+.subtitle {
+      color: gray;
+      font-size: 14px;
+    }
+.content {
+      font-size: 16px;
+      margin-bottom: 15px;
+      text-align: justify;
+}
+
+.back {
+  font-size: 12px;
+}
+
+.main {
+  margin-top: 40px;
+}
+
+.index {
+  margin-bottom: 30px;
+}
+
+.show {
+  margin-bottom: 60px;
+}
+.blue {
+  color: blue;
+}
+
+textarea {
+  height: 100px;
+}
+
+.footer-comments {
+  padding-top: 0px;
+}

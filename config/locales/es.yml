@@ -1,0 +1,56 @@
+es:
+
+  errors:
+    messages:
+      blank: "no puede estar en blanco"
+      invalid: "es inválido"
+      not_saved: "No se guardó porque:"
+      not_found: "no encontrado"
+
+
+  activerecord:
+    errors:
+      models:
+        post:
+          attributes:
+            content:
+              too_short: "muy corto (mínimo 250 caracteres)"
+
+    attributes:
+      user:
+        email: "Correo"
+        password: "Contraseña"
+      post:
+        title: "Titulo"
+        content: "Contenido"
+
+  devise:
+    failure:
+      user:
+        invalid: "Tu correo y/o contraseña son inválidas. Intenta nuevamente."
+        not_found_in_database: "%{authentication_keys} o contraseña inválida"
+        unauthenticated: "Debe registrarse o ingresar"
+    sessions:
+      user:
+        signed_in: "Ingreso exitoso"
+        signed_out: "Sesión finalizada"
+    omniauth_callbacks:
+      failure: "No fue posible autenticarlo %{kind} porque \"%{reason}\"."
+      success: "Autenticado existosamente de la cuenta %{kind}"
+    passwords:
+      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
+
+  datetime:
+    distance_in_words:
+      x_days:
+        one: "hace 1 día"
+        other: "hace %{count} días"
+      about_x_hours:
+        one: "hace 1 hora"
+        other: "hace %{count} horas"
+      x_minutes:
+        one: "hace 1 minuto"
+        other: "hace %{count} minutos"
+      less_than_x_minutes:
+        one: "hace menos de 1 minuto"
+        other: "hace menos de %{count} minutos"

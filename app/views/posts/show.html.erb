@@ -1,0 +1,61 @@
+<!-- <%if notice %>
+<div class="alert alert-info">
+  <%= notice %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<%end%> -->
+
+<p class="back"><%= link_to 'Volver', posts_path %></p>
+
+<div class="show">
+  <p class="title">
+    <!-- <strong>Título</strong> -->
+    <%= @post.title %>
+  </p>
+
+  <div class="content">
+    <!-- <strong>Contenido</strong> -->
+    <%= markdown(@post.content) %>
+  </div>
+</div>
+
+
+<div class="jumbotron footer-comments">
+  <div class="container">
+  <!-- <% if @post.comments.count == 1 %>
+  <h4><%= @post.comments.count %> comentario</h4>
+  <%elsif @post.comments.count > 1 || @post.comments.count == 0 %>
+  <h4><%= @post.comments.count %> comentarios</h4>
+  <%end%> -->
+  <p><h4><%= pluralize(@post.comments.count, "comentario")%></h4></p>
+
+  <%@post.comments.each do |comment| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <small><strong><%=comment.user.email%> comentó <%=time_ago_in_words(comment.created_at)%></strong></small>
+      </div>
+      <div class="panel-body">
+        <%= comment.body %>
+      </div>
+    </div>
+
+  <!-- <%if user_signed_in? && comment.user.email==current_user.email %>
+    <p><%= button_to 'Eliminar', [comment.post, comment],
+                method: :delete,
+                class: "button",
+                data: {Confirm: '¿Estas seguro?'} %>
+    </p>
+  <%end%> -->
+  <%end%>
+
+  <% if user_signed_in? %>
+    <strong>Nuevo comentario</strong>
+    <%= render "comments/form"%>
+
+  <!-- <%= link_to 'Editar', edit_post_path(@post) %> |
+  <%= link_to 'Atras', posts_path %> -->
+  <%end%>
+  </div>
+</div>
